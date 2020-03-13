@@ -1,0 +1,7 @@
+{
+	"pa_api_url": "http://realtime.portauthority.org/bustime/api/v3",
+	"api_key": "",
+	"elastic_instance": "",
+	"max_requests_per_day": 10000,
+	"history_retention": "1 mo"
+}
