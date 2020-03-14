@@ -3,5 +3,9 @@
 	"api_key": "",
 	"elastic_instance": "",
 	"max_requests_per_day": 10000,
-	"history_retention": "1 mo"
+	"history_retention": "1 mo",
+	"api": {
+		"getAllRoutes": "http://realtime.portauthority.org/bustime/api/v3/getroutes?key={api_key}&format=json",
+		"getVehicles": "http://realtime.portauthority.org/bustime/api/v3/getvehicles?key={api_key}}&rt={comma_delimited_list_of_routes}&format=json"
+	}
 }
