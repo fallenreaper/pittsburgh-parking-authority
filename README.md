@@ -15,7 +15,7 @@ We need a backstop for History.  We dont need to know ALL history indefinately, 
 ## Set Up / Install
 Standing up the full cluster will be done by doing the following:
 - Install Docker.
-- Enable Kubernets
+- Enable Kubernetes
 - Update the configuration hardware for the cluster.  Give it additional ram, space, threads.
 - Restart the cluster to save the infomration.
 - Ensure that `kubectl` is pointing to the Docker for [Platform] correctly.
@@ -23,7 +23,8 @@ Standing up the full cluster will be done by doing the following:
 kubectl congif get-contexts
 kubectl config use-context docker-for-desktop
 ```
-- Now you need to apply the elastic to this cluster.
+- You need an ID for Pittsburgh's Data API.
+- Now you need to apply the elastic to this cluster, filling out the part where it says: TRANSIT_API
 ```
 kubectl apply -f elastic.yaml
 ```
@@ -40,9 +41,7 @@ kubectl port-forward service/kibana-kb-http 5601
 
 - Go into Kibana and set up a Lifecycle policy for index retention.
 - Go into Kibana and set up mapping for the following:
-  - geo_point will be done on:  location, location-map, location-string so that way any of those types can be used.
-  - tmpstmp Date
-    - You will need update the allowable dates.
+  - You will need to create a mappingg for:  bustime-response.vehicle.location which will be of type: 'Geo Point'
 
 ## TODO
 Implement a mechanism to update elasticsearch with Lifecycle policy and mapping index templates.
