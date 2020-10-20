@@ -79,7 +79,6 @@ data:
       }
       mutate {
         add_field => { "[bustime-response][vehicle][geo_location]" => "%{[bustime-response][vehicle][lat]},%{[bustime-response][vehicle][lon]}" }
-        add_field => { "[bustime-response][vehicle][bk_tmstmp]" => "%{[bustime-response][vehicle][tmstmp]}"}
       }
       date { 
         match => [ "[bustime-response][vehicle][tmstmp]", "yyyyMMdd HH:mm", "yyyyMMdd H:m"]
