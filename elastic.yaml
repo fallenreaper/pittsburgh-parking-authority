@@ -149,15 +149,3 @@ spec:
         - name: ca-certs
           secret:
             secretName: elasticsearch-es-http-certs-public
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: logstash
-  labels:
-    app.kubernetes.io/name: eck-logstash
-    app.kubernets.io/component: logstash
-spec:
-  selector:
-    app.kubernetes.io/name: eck-logstash
-    app.kubernets.io/component: logstash
